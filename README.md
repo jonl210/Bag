@@ -1,7 +1,7 @@
 # Bag
 Bag is a private bookmarking and organization service.
 
-#Technologies
+# Technologies
  - Django/Python
  - MySQL
  - Bootstrap
