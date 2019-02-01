@@ -1,0 +1,21 @@
+{% extends "home/layout.html" %}
+
+{% load static %}
+
+{% block title %}<title>Bag - My Bags</title>{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'users/mybags_style.css' %}">{% endblock %}
+
+{% block body %}
+  {% block bodyTitle %}<h2 id="mainBodyTitle">My Bags</h2>{% endblock %}
+  {% if bags %}
+    {% for bag in bags %}
+      <div class="bagStyle">
+        <h3 class="bagName">{{ bag.name }}</h3>
+        <i class="fa fa-briefcase fa-5x" aria-hidden="true"></i><br>
+        <a class="btn btn-default openBagButton" href="{% url 'bag' bag.id %}">Open</a>
+      </div>
+    {% endfor %}
+  {% else %}
+    <h3>You currently have no Bags</h3>
+  {% endif %}
+{% endblock %}

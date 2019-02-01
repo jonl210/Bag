@@ -1,0 +1,15 @@
+{% extends "home/layout.html" %}
+
+{% load static %}
+
+{% block title %}<title>Bag - New Bag</title>{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'users/newbag_style.css' %}">{% endblock %}
+
+{% block body %}
+  {% block bodyTitle %}<h2 id="mainBodyTitle">New Bag</h2>{% endblock %}
+  <form class="createBagForm" action="{% url 'create_bag' %}" method="POST">{% csrf_token %}
+    <h3 id="formHead">Give your Bag a name!</h3>
+    <input name="name" type="text" class="form-control" placeholder="Name" required>
+    <button id="submitButton" type="submit" class="btn btn-default">Create Bag</button>
+  </form>
+{% endblock %}

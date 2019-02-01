@@ -1,0 +1,18 @@
+{% extends "home/layout.html" %}
+
+{% load static %}
+
+{% block title %}<title>Bag - All Items</title>{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'users/allitems_style.css' %}">{% endblock %}
+
+{% block body %}
+  {% block bodyTitle %}<h2 id="mainBodyTitle">All Items</h2>{% endblock %}
+  {% if items %}
+    {% for item in items %}
+      <div class="itemStyle">
+        <h3 class="itemName">{{ item.name }}</h3>
+        <a class="itemLink" href="{{ item.url }}" target="_blank"><i class="fa fa-bookmark fa-5x" aria-hidden="true"></i></a>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

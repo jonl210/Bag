@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    {% block title %}<title>Bag</title>{% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/layout_style.css' %}">
+    <script src="https://use.fontawesome.com/d032feab93.js"></script>
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="bodyHeading">
+            <h3 id="logoName">Bag</h3>
+            <a class="navLink" href="{% url 'my_bags' %}">My Bags</a><br>
+            <a class="navLink" href="{% url 'all_items' %}">All Items</a><br>
+            <a class="navLink" href="">Account</a><br>
+            <a class="navLink" href="{% url 'logout_user' %}">Log Out</a><br>
+            <a id="newBagButton" class="btn btn-default" href="{% url 'new_bag' %}">New Bag</a>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="mainBody">
+            {% block body %}
+              {% block bodyTitle %}<h2 id="mainBodyTitle">Welcome!</h2>{% endblock %}
+              <p class="mainBodyContent">Bag is a simple private bookmarking and organization service.
+                                         Click "New Bag" to get started!</p>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

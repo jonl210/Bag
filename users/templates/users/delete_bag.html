@@ -1,0 +1,15 @@
+{% extends "users/bag.html" %}
+
+{% load static %}
+
+{% block title %}<title>Bag - Delete Bag</title>{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'users/delete_bag_style.css' %}">{% endblock %}
+
+{% block body %}
+  {% block bodyTitle %}<h2 id="mainBodyTitle">{{ bag.name }} - Delete Bag</h2>{% endblock %}
+  <p id="warningParagraph">This process cannot be undone.</p>
+  <form action="{% url 'delete_bag' %}" method="POST">{% csrf_token %}
+    <input type="hidden" name="bag_id" value="{{ bag.id }}">
+    <button type="submit" class="btn btn-default btn-danger">Delete Bag</button>
+  </form>
+{% endblock %}

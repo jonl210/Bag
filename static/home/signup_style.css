@@ -1,0 +1,71 @@
+body {
+  background-color: #9cc;
+}
+
+.bodyHeading {
+  text-align: center;
+  padding: 130px 15px;
+}
+
+#logoName {
+  font-family: 'Lato', sans-serif;
+  font-size: 60px;
+  color: #fff;
+}
+
+.signUpForm {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #7fa0bf;
+  margin-top: 49px;
+  border-radius: 12px;
+}
+
+.signUpFormHeading {
+  color: #fff;
+}
+
+.signUpForm input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.signUpForm input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.signUpForm input[type="password"] {
+  margin-bottom: 10px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.signUpForm .form-control {
+  position: relative;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  -webkit-box-shadow: none;
+}
+
+.form-control:focus {
+  border: 1px solid #fff;
+}
+
+#submitButton {
+  background-color: #87deb3;
+  border: 2px solid #87deb3;
+  font-size: 17px;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+#submitButton:hover {
+  background-color: #a6e6c6;
+}

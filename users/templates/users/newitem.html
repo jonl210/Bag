@@ -1,0 +1,16 @@
+{% extends "users/bag.html" %}
+
+{% load static %}
+
+{% block title %}<title>Bag - New Item</title>{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'users/newitem_style.css' %}">{% endblock %}
+
+{% block body %}
+  {% block bodyTitle %}<h2 id="mainBodyTitle">New Item</h2>{% endblock %}
+  <form class="createItemForm" action="{% url 'create_item' bag.id %}" method="POST">{% csrf_token %}
+    <h3 id="formHead">Paste the URL here</h3>
+    <input name="url" type="text" class="form-control" placeholder="URL" required>
+    <input id="titleField" name="title" type="text" class="form-control" placeholder="Name (optional)">
+    <button id="submitButton" type="submit" class="btn btn-default">Create Item</button>
+  </form>
+{% endblock %}
